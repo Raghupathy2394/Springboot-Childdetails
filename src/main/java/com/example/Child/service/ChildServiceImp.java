@@ -19,6 +19,14 @@ public List<Child> getall();
 
 public Child update(Child child);
 
+public List<Child> updateall(List<Child>  childall);
+
+public String delete(int id);
+
+public String deleteall();
+
+
+
 
 
 	
