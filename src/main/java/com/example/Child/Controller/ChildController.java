@@ -32,6 +32,7 @@ public class ChildController {
 	public List<Child> createall(@RequestBody List<Child> childall) {
 		return childservice.createall(childall);
 	}
+	
 
 	@GetMapping("/get/{id}")
 	public Optional<Child> getdetail(@PathVariable int id) {
