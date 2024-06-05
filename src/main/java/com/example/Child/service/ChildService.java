@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.Child.Entity.Child;
+import com.example.Child.Repository.AddressRepository;
 import com.example.Child.Repository.ChildRepository;
 
 @Service
@@ -14,6 +15,9 @@ public class ChildService implements ChildServiceImp {
 
 	@Autowired
 	ChildRepository childRepository;
+	
+	@Autowired
+	AddressRepository addressRepository;
 
 	@Override
 	public Child create(Child child) {

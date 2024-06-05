@@ -2,6 +2,8 @@ package com.example.Child.Entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +19,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "children")
+@Table(name = "addresschild")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -37,11 +39,15 @@ public class Child {
 	@Column(name = "gender")
 	private String gender;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	 @JoinColumn(name="fk_aid") //address aid
-	 private Address address;
+//	@OneToOne(cascade = CascadeType.ALL)
+//	 @JoinColumn(name="fk_aid") //address aid
+//	 private Address address;
 	
 //	@OneToMany(cascade = CascadeType.ALL)
 //	@JoinColumn(name="fk_id",referencedColumnName = "id")
 //	private List<Address> address; 
+	
+	@OneToMany(mappedBy = "child",cascade = CascadeType.ALL)
+	@JsonManagedReference
+	private List<Address> address;
 }

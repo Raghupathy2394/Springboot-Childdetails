@@ -17,7 +17,7 @@ import com.example.Child.Entity.Child;
 import com.example.Child.service.ChildServiceImp;
 
 @RestController
-@RequestMapping("/child")
+@RequestMapping("/childd")
 public class ChildController {
 
 	@Autowired
